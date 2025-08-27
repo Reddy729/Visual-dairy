@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Visual Diary</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header class="app-header">
+		<div class="brand">📒 Visual Diary</div>
+		<div class="auth-controls">
+			<span id="user-label" class="muted hidden"></span>
+			<button id="btn-login" class="btn">Login</button>
+			<button id="btn-logout" class="btn hidden">Logout</button>
+		</div>
+	</header>
+
+	<div class="container">
+		<h1>Visual Diary</h1>
+		<form id="entry-form" class="card form">
+			<div class="row">
+				<label>Title
+					<input id="title" type="text" placeholder="Today's title" required>
+				</label>
+			</div>
+			<div class="row">
+				<label>Notes
+					<textarea id="notes" rows="4" placeholder="Write your thoughts..."></textarea>
+				</label>
+			</div>
+			<div class="row">
+				<label>Images
+					<input id="images" type="file" accept="image/*" multiple>
+				</label>
+			</div>
+			<div class="actions">
+				<button type="submit" class="btn primary">Save</button>
+				<button type="button" id="clear-all" class="btn danger">Clear All</button>
+			</div>
+		</form>
+
+		<h2>Entries</h2>
+		<div id="entries" class="grid"></div>
+	</div>
+
+    <!-- Full Entry View/Edit Modal -->
+    <div id="view-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Entry</h3>
+                <button id="view-close" class="icon-btn">✖</button>
+            </div>
+            <div class="modal-body">
+                <form id="view-form" class="form">
+                    <input type="hidden" id="view-id">
+                    <div class="row">
+                        <label>Title
+                            <input id="view-title" type="text" required>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>Notes
+                            <textarea id="view-notes" rows="5"></textarea>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>Append Images
+                            <input id="view-images" type="file" accept="image/*" multiple>
+                        </label>
+                    </div>
+                    <div class="thumbs" id="view-thumbs"></div>
+                    <div class="actions">
+                        <button type="button" id="view-delete" class="btn danger">Delete</button>
+                        <button type="submit" class="btn primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<!-- Auth Modal -->
+	<div id="auth-modal" class="modal hidden">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 id="auth-title">Login</h3>
+				<button id="auth-close" class="icon-btn">✖</button>
+			</div>
+			<div class="modal-body">
+				<div class="auth-forms">
+					<label>Email
+						<input id="auth-email" type="email" placeholder="you@example.com" required>
+					</label>
+					<label>Password
+						<input id="auth-password" type="password" placeholder="********" required>
+					</label>
+					<div class="actions">
+						<button id="auth-login" class="btn primary">Login</button>
+						<button id="auth-register" class="btn">Register</button>
+					</div>
+					<p class="muted small">Passwords are hashed and stored locally (demo only).</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+</html>
+
