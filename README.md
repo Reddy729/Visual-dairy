@@ -24,6 +24,11 @@ No build step is required.
 
    ```powershell
    start index.html
+
+   cd "D:\Users\chorme downloads\Visual-dairy-main\Visual-dairy-main"
+npm install
+cd "D:\Users\chorme downloads\Visual-dairy-main\Visual-dairy-main"
+npm run dev
    ```
 
 The app will open in your default browser.
